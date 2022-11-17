@@ -1,0 +1,119 @@
+package domain;
+
+/**
+ *
+ * @author dani
+ */
+public class Alumno {
+
+    private String nombre;
+    private String apellido;
+    private String materia;
+    private int proceso;
+    private int parcial;
+    private int tabajoInvestigacion;
+    private int examenFinal;
+    private int notaFinal ;
+    private int calificacion;
+
+    public Alumno(String nombre, String apellido, String materia, int proceso, int parcial, int tabajoInvestigacion, int examenFinal) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.materia = materia;
+        this.proceso = proceso;
+        this.parcial = parcial;
+        this.tabajoInvestigacion = tabajoInvestigacion;
+        this.examenFinal = examenFinal;
+
+        notaFinal = proceso + parcial + tabajoInvestigacion + examenFinal;
+        calificacion=1;
+
+        
+    if (notaFinal >= 91 && notaFinal <= 100) {
+            calificacion=5;
+        } else if (notaFinal <= 90 && notaFinal >= 81) {
+            calificacion=4;
+        } else if (notaFinal <= 80 && notaFinal >= 71) {
+            calificacion=3;
+        } else if (notaFinal <= 70 && notaFinal >= 60) {
+            calificacion=2;
+        } else if (notaFinal <= 59 && notaFinal >= 0) {
+            calificacion=1;
+        } 
+    
+    
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public int getcalificacion() {
+        return calificacion;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
+
+    public int getProceso() {
+        return proceso;
+    }
+
+    public void setProceso(int proceso) {
+        this.proceso = proceso;
+    }
+
+    public int getParcial() {
+        return parcial;
+    }
+
+    public void setParcial(int parcial) {
+        this.parcial = parcial;
+    }
+
+    public int getTabajoInvestigacion() {
+        return tabajoInvestigacion;
+    }
+
+    public void setTabajoInvestigacion(int tabajoInvestigacion) {
+        this.tabajoInvestigacion = tabajoInvestigacion;
+    }
+
+    public int getExamenFinal() {
+        return examenFinal;
+    }
+
+    public void setExamenFinal(int examenFinal) {
+        this.examenFinal = examenFinal;
+    }
+
+    public int getNotaFinal() {
+        return notaFinal;
+    }
+    
+    
+    
+
+    @Override
+    public String toString() {
+        return  "Proceso= " + proceso + "\nParcial= " + parcial + "\nTabajo de Investigacion= " + tabajoInvestigacion + "\nExamen Final= " + examenFinal;
+    }
+
+}
