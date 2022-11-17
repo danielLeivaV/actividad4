@@ -1,0 +1,68 @@
+package test;
+
+import domain.Alumno;
+import java.util.Scanner;
+
+/**
+ *
+ * @author dani
+ */
+public class TestNota {
+
+    public static void main(String[] args) {
+        Alumno materias[] = new Alumno[1];
+        System.out.println("Ingrese Nombre");
+        Scanner consola = new Scanner(System.in);
+        var nombreSc = consola.nextLine();
+        System.out.println("Ingrese Apellido");
+        var apellidoSc = consola.nextLine();
+        System.out.println("Ingrese Materia");
+        var materiaSc = consola.nextLine();
+
+        var procesoSc = 21;
+        while (procesoSc >= 21||procesoSc<0) {
+            System.out.println("Ingrese el puntaje de proceso 0 a 20 = ");
+            procesoSc = consola.nextInt();
+            if (procesoSc >= 21||procesoSc<0) {
+                System.out.print("POR FAVOR ");
+            }
+        }
+        var parcialSc = 11;
+        while(parcialSc>=11||parcialSc<0){
+        System.out.println("Ingrese el puntaje del parcial 0 a 10 = ");
+        parcialSc = consola.nextInt();
+        if (parcialSc >= 11||parcialSc<0) {
+                System.out.print("POR FAVOR ");
+            }
+        }
+        
+        var trabajoPracticoSc = 31;
+        while(trabajoPracticoSc>=31||trabajoPracticoSc<0){
+        System.out.println("Ingrese el puntaje del Trabajo Practico 0 a 30 = ");
+        trabajoPracticoSc = consola.nextInt();
+        if (trabajoPracticoSc >= 31||trabajoPracticoSc<0) {
+                System.out.print("POR FAVOR ");
+            }
+        }
+        
+        var exFinSc = 41;
+        while(exFinSc>=41||exFinSc<0){
+        System.out.println("Ingrese el puntaje del Examen Final 0 a 40 = ");
+        exFinSc = consola.nextInt();
+        if (exFinSc >= 41||exFinSc<0) {
+                System.out.print("POR FAVOR ");
+            }
+        }
+        
+        
+        materias[0] = new Alumno(nombreSc, apellidoSc, materiaSc, procesoSc, parcialSc, trabajoPracticoSc, exFinSc);
+        System.out.println("Nombre y Apellido: " + materias[0].getNombre() + " " + materias[0].getApellido());
+        System.out.println("Materia: " + materias[0].getMateria());
+        System.out.println( materias[0].toString());
+        System.out.println("------------------------------");
+        System.out.println("Nota final: " + materias[0].getNotaFinal());
+        System.out.println("Calificacion: " + materias[0].getcalificacion());
+
+    }
+
+}
